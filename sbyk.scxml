@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" initial="start">
+  <state id="start">
+    <transition event="youken" target="ask_pay"/>
+  </state>
+  <state id="ask_pay">
+    <transition event="pay" target="ask_net"/>
+  </state>
+  <state id="ask_net">
+    <transition event="net" target="ask_net_pay"/>
+  </state>
+  <state id="ask_net_pay">
+    <transition event="price" target="ask_denki"/>
+   </state>
+  <state id="ask_denki">
+    <transition event="denki" target="ask_meigi"/>
+  </state>
+  <state id="ask_meigi">
+    <transition event="name" target="ask_paypay"/>
+  </state>
+  <state id="ask_paypay">
+     <transition event="pa" target="ask_family"/>
+  </state>
+  <state id="ask_family">
+    <transition event="fa" target="ask_tablet"/>
+  </state>
+  <state id="ask_tablet">
+    <transition event="ta" target="tell_info"/>
+  </state>
+  <state id="tell_info">
+    <transition event="ok" target="end"/>
+  </state>
+  <final id="end"/>
+</scxml>

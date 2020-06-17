@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" initial="start">
+  <state id="start">
+      <transition event="aisatu" target="ask_name"/>
+  </state>
+  <state id="ask_name">
+      <transition event="name" target="ask_rename"/>
+  </state>
+  <state id="ask_rename">
+      <transition event="task" target="ask_task"/>
+  </state>
+  <state id="ask_task">
+      <transition event="retask" target="ask_retask"/>
+  </state>
+  <final id="ask_retask"/>
+</scxml>
